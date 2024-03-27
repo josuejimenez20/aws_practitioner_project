@@ -8,8 +8,6 @@ const logInServices = async (userData) => {
 
         const result = await logInModels(userData);
 
-        console.log(result);
-
         if (result.length > 0)
             return {
                 code: 200,
@@ -20,7 +18,7 @@ const logInServices = async (userData) => {
         return {
             code: 404,
             message: 'User did not find',
-            success: true
+            success: false
         }
 
     } catch (error) {
@@ -37,8 +35,6 @@ const signInUserService = async (userData) => {
     try {
 
         const verifyAuthentication = await verifyUserAuthenticationModels(userData);
-
-        console.log(verifyAuthentication);
 
         if (verifyAuthentication.length > 0) {
             return {

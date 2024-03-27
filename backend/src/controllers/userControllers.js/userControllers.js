@@ -5,8 +5,6 @@ const logInUserController = async (req, res) => {
 
     try {
 
-        console.log(req.body);
-
         const result = await logInServices(req.body);
 
         if (result.code && result.success === true) {
