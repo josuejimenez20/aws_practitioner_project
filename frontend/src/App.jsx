@@ -1,10 +1,15 @@
-import 'react'
+import React from 'react';
+import AppRouter from './routes/AppRouter';
+import { Container } from '@mui/material'
+
 
 function App() {
 
   return (
     <>
-      <h1>Vite + React</h1>
+      <Container maxWidth="auto" style={{backgroundColor: 'red'}}>
+        <AppRouter />
+      </Container>
     </>
   )
 }

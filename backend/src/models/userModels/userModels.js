@@ -25,8 +25,6 @@ const signInUserModels = async (userData) => {
     const { user_id, email,
         password, name, lastname } = userData;
 
-    console.log(name);
-
     const query = `
     
     INSERT INTO users 
@@ -48,13 +46,13 @@ const signInUserModels = async (userData) => {
 
 const verifyUserAuthenticationModels = async (userData) => {
 
-    const { email, password } = userData;
+    const { email } = userData;
 
     const query = `
     
     SELECT * 
     FROM users us
-    WHERE us.email = '${email}' AND us.password = '${password}'
+    WHERE us.email = '${email}';
     `;
 
     try {

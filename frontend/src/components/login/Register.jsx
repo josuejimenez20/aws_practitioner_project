@@ -4,19 +4,23 @@ import {
     Container, Stack, TextField, Button,
     Alert
 } from '@mui/material';
-import { loginAction } from '../../actions/login/loginAction';
+import { registerAction } from '../../actions/login/registerAction';
 
-export default function Login() {
+export default function Register() {
 
     const navigate = useNavigate();
 
     const [logInError, setLogInError] = useState(null);
 
+    const [name, setName] = useState("");
+    const [lastname, setLastname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
+    const [nameError, setNameError] = useState(false);
+    const [lastNameError, setLastnameError] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -30,14 +34,22 @@ export default function Login() {
         if (password === '') {
             setPasswordError(true);
         }
+        if (name === '') {
+            setNameError(true);
+        }
+        if (lastname === '') {
+            setLastnameError(true);
+        }
 
         const dataFormat = {
             email,
             password,
+            name,
+            lastname
         }
 
         try {
-            const { message, status } = await loginAction(dataFormat);
+            const { message, status } = await registerAction(dataFormat);
             if (status === 200) {
                 navigate('/home')
                 return
@@ -55,15 +67,34 @@ export default function Login() {
                 backgroundColor: 'blue', height: '50em',
                 paddingTop: '1em'
             }}>
-                <h1 style={{ textAlign: 'center' }}>INICIAR SESIÓN</h1>
+                <h1 style={{ textAlign: 'center' }}>CREAR CUENTA</h1>
                 {
                     logInError ?
                         <Alert severity="error">{logInError}.</Alert>
                         : <></>
                 }
-
                 <form autoComplete="off" onSubmit={handleSubmit}>
                     <Stack spacing={7} marginBottom={6} marginTop={6}>
+                        <TextField
+                            label="Name"
+                            onChange={e => setName(e.target.value)}
+                            required
+                            variant="outlined"
+                            type="text"
+                            sx={{ mb: 3 }}
+                            value={name}
+                            error={nameError}
+                        />
+                        <TextField
+                            label="Lastname"
+                            onChange={e => setLastname(e.target.value)}
+                            required
+                            variant="outlined"
+                            type="text"
+                            sx={{ mb: 3 }}
+                            value={lastname}
+                            error={lastNameError}
+                        />
                         <TextField
                             label="Email"
                             onChange={e => setEmail(e.target.value)}
@@ -85,12 +116,13 @@ export default function Login() {
                             error={passwordError}
                         />
 
-                        <Button variant="contained" size="large" type="submit">Iniciar Sesión</Button>
+                        <Button variant="contained" size="large" type="submit">REGISTRARSE</Button>
                     </Stack>
                     <Button variant="outlined" size="sm"
-                    onClick={() => {
-                        navigate('/register')
-                    }}>CREAR CUENTA</Button>
+                        onClick={() => {
+                            navigate('/login')
+                        }}
+                    >INICIAR SESION</Button>
                 </form>
             </Container>
         </>
