@@ -64,8 +64,8 @@ export default function Register() {
     return (
         <>
             <Container maxWidth='md' style={{
-                backgroundColor: 'blue', height: '50em',
-                paddingTop: '1em'
+                backgroundColor: 'white', height: '50em',
+                paddingTop: '1em', border: '2px solid yellow'
             }}>
                 <h1 style={{ textAlign: 'center' }}>CREAR CUENTA</h1>
                 {

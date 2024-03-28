@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Login from '../components/login/Login';
 import Register from '../components/login/Register';
+import Home from '../components/home/Home';
 
 export default function AppRouter() {
 
@@ -12,8 +13,7 @@ export default function AppRouter() {
                 <Route path='/' element={<h2>PRINCIPAL</h2>} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
-                {/* <Route path='/login/*' element={<Login />} />
-                <Route path='/Home/*' element={<Home />} /> */}
+                <Route path='/home/*' element={<Home />} />
             </Routes>
         </>
     )

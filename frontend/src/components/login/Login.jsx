@@ -52,8 +52,8 @@ export default function Login() {
     return (
         <>
             <Container maxWidth='md' style={{
-                backgroundColor: 'blue', height: '50em',
-                paddingTop: '1em'
+                backgroundColor: 'white', height: '50em',
+                paddingTop: '1em', border: '2px solid yellow'
             }}>
                 <h1 style={{ textAlign: 'center' }}>INICIAR SESIÓN</h1>
                 {
@@ -88,9 +88,9 @@ export default function Login() {
                         <Button variant="contained" size="large" type="submit">Iniciar Sesión</Button>
                     </Stack>
                     <Button variant="outlined" size="sm"
-                    onClick={() => {
-                        navigate('/register')
-                    }}>CREAR CUENTA</Button>
+                        onClick={() => {
+                            navigate('/register')
+                        }}>CREAR CUENTA</Button>
                 </form>
             </Container>
         </>
