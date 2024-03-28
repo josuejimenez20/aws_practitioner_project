@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Container maxWidth="auto" style={{backgroundColor: 'red'}}>
+      <Container maxWidth="auto" style={{ backgroundColor: 'white' }}>
         <AppRouter />
       </Container>
     </>
