@@ -15,15 +15,16 @@ export default function Exams() {
                 maxWidth='xl'
                 style={{
                     backgroundColor: 'white',
-                    marginTop: '2em'
+                    marginTop: '2em',
                 }}
             >
                 <Typography
                     variant='h3'
                     textAlign='center'
                     marginBottom={7}
+                    fontStyle={'oblique'}
                 >
-                    Examenes
+                    Examenes Practica
                 </Typography>
 
                 <Stack
@@ -33,8 +34,14 @@ export default function Exams() {
                     <Card
                         sx={{
                             width: '25%',
-                            backgroundColor: 'black',
-                            height: '25em'
+                            backgroundColor: 'white',
+                            height: '25em',
+                            border: '2px solid yellow',
+                            transition: 'transform 0.3s, border-radius 0.3s', // Agregamos transición para suavizar el efecto
+                            '&:hover': {
+                                transform: 'scale(1.05)', // Hace la tarjeta un poco más grande al pasar el cursor
+                                borderRadius: '20px' // Hace que el radio del borde sea más grande al pasar el cursor
+                            }
                         }}
                         onClick={() => {
                             navigate('/home/exam/1')
@@ -42,7 +49,7 @@ export default function Exams() {
                         <Typography
                             variant='h1'
                             textAlign='center'
-                            color='white'
+                            color='yellow'
                         >
                             1
                         </Typography>
@@ -50,7 +57,7 @@ export default function Exams() {
                             variant='h6'
                             textAlign='center'
                             marginBottom={7}
-                            color='white'
+                            color='black'
                         >
                             <Typography variant='h4'>
                                 Recomendacion de estudio:
@@ -69,8 +76,14 @@ export default function Exams() {
                     <Card
                         sx={{
                             width: '25%',
-                            backgroundColor: 'black',
-                            height: '25em'
+                            backgroundColor: 'white',
+                            height: '25em',
+                            border: '2px solid green',
+                            transition: 'transform 0.3s, border-radius 0.3s', // Agregamos transición para suavizar el efecto
+                            '&:hover': {
+                                transform: 'scale(1.05)', // Hace la tarjeta un poco más grande al pasar el cursor
+                                borderRadius: '20px' // Hace que el radio del borde sea más grande al pasar el cursor
+                            }
                         }}
                         onClick={() => {
                             navigate('/home/exam/2')
@@ -78,7 +91,7 @@ export default function Exams() {
                         <Typography
                             variant='h1'
                             textAlign='center'
-                            color='white'
+                            color='green'
                         >
                             2
                         </Typography>
@@ -86,7 +99,7 @@ export default function Exams() {
                             variant='h6'
                             textAlign='center'
                             marginBottom={7}
-                            color='white'
+                            color='black'
                         >
                             <Typography variant='h4'>
                                 Recomendacion de estudio:
@@ -105,8 +118,14 @@ export default function Exams() {
                     <Card
                         sx={{
                             width: '25%',
-                            backgroundColor: 'black',
-                            height: '25em'
+                            backgroundColor: 'white',
+                            height: '25em',
+                            border: '2px solid red',
+                            transition: 'transform 0.3s, border-radius 0.3s', // Agregamos transición para suavizar el efecto
+                            '&:hover': {
+                                transform: 'scale(1.05)', // Hace la tarjeta un poco más grande al pasar el cursor
+                                borderRadius: '20px' // Hace que el radio del borde sea más grande al pasar el cursor
+                            }
                         }}
                         onClick={() => {
                             navigate('/home/exam/3')
@@ -114,7 +133,7 @@ export default function Exams() {
                         <Typography
                             variant='h1'
                             textAlign='center'
-                            color='white'
+                            color='red'
                         >
                             3
                         </Typography>
@@ -122,7 +141,7 @@ export default function Exams() {
                             variant='h6'
                             textAlign='center'
                             marginBottom={7}
-                            color='white'
+                            color='black'
                         >
                             <Typography variant='h4'>
                                 Recomendacion de estudio:
@@ -149,8 +168,14 @@ export default function Exams() {
                     <Card
                         sx={{
                             width: '25%',
-                            backgroundColor: 'black',
-                            height: '25em'
+                            backgroundColor: 'white',
+                            height: '25em',
+                            border: '2px solid black',
+                            transition: 'transform 0.3s, border-radius 0.3s', // Agregamos transición para suavizar el efecto
+                            '&:hover': {
+                                transform: 'scale(1.05)', // Hace la tarjeta un poco más grande al pasar el cursor
+                                borderRadius: '20px' // Hace que el radio del borde sea más grande al pasar el cursor
+                            }
                         }}
                         onClick={() => {
                             navigate('/home/exam/4')
@@ -158,7 +183,7 @@ export default function Exams() {
                         <Typography
                             variant='h1'
                             textAlign='center'
-                            color='white'
+                            color='black'
                         >
                             4
                         </Typography>
@@ -166,7 +191,7 @@ export default function Exams() {
                             variant='h6'
                             textAlign='center'
                             marginBottom={7}
-                            color='white'
+                            color='black'
                         >
                             <Typography variant='h4'>
                                 Recomendacion de estudio:
@@ -185,8 +210,14 @@ export default function Exams() {
                     <Card
                         sx={{
                             width: '25%',
-                            backgroundColor: 'black',
-                            height: '25em'
+                            backgroundColor: 'white',
+                            height: '25em',
+                            border: '2px solid blue',
+                            transition: 'transform 0.3s, border-radius 0.3s', // Agregamos transición para suavizar el efecto
+                            '&:hover': {
+                                transform: 'scale(1.05)', // Hace la tarjeta un poco más grande al pasar el cursor
+                                borderRadius: '20px' // Hace que el radio del borde sea más grande al pasar el cursor
+                            }
                         }}
                         onClick={() => {
                             navigate('/home/exam/5')
@@ -194,7 +225,7 @@ export default function Exams() {
                         <Typography
                             variant='h1'
                             textAlign='center'
-                            color='white'
+                            color='blue'
                         >
                             5
                         </Typography>
@@ -202,13 +233,13 @@ export default function Exams() {
                             variant='h6'
                             textAlign='center'
                             marginBottom={7}
-                            color='white'
+                            color='black'
                         >
                             <Typography variant='h4'>
                                 Recomendacion de estudio:
                             </Typography>
                             <br />
-                            Amazon Simple Queue Service (Amazon SQS)
+                            Amazon Simple Queue Service (SQS)
                             <br />
                             <br />
                             Health checks and monitoring
