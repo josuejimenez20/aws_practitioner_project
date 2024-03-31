@@ -1,6 +1,41 @@
 const { logInServices, signInUserService
 } = require('../../services/userServices/userServices');
 
+const cloudinary = require("cloudinary").v2;
+
+// Configura Cloudinary con la URL de la variable de entorno
+cloudinary.config({
+  cloud_name: 'dtmtbvid9',
+  api_key: '638174394713967',
+  api_secret: 'jHto0FeQeH_6qIsZT3Mm7oSUEhQ'
+});
+
+const imageUpload = async (req, res) => {
+    try {
+        if (!req.files || !req.files.fileImage) {
+            return res.status(400).json({ message: 'No se ha enviado ningún archivo' });
+        }
+
+        const { fileImage } = req.files;
+
+        // Sube el archivo a Cloudinary
+        const { secure_url } = await cloudinary.uploader.upload(fileImage.tempFilePath, { height: 1250, width: 1870, crop: "scale" });
+
+        console.log(secure_url);
+
+        return res.status(200).json({
+            message: 'Archivo subido exitosamente',
+            secure_url: secure_url
+        });
+    } catch (error) {
+        console.error('Error al subir el archivo:', error);
+        return res.status(500).json({ message: 'Ocurrió un error al subir el archivo' });
+    }
+};
+
+module.exports = { imageUpload };
+
+
 const logInUserController = async (req, res) => {
 
     try {
@@ -50,5 +85,6 @@ const signInUserController = async (req, res) => {
 
 module.exports = {
     logInUserController,
-    signInUserController
+    signInUserController,
+    imageUpload
 }

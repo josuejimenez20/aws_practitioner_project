@@ -7,6 +7,8 @@ import { SecondExam } from '../../components/home/menus/exams/SecondExam';
 import { ThirdExam } from '../../components/home/menus/exams/ThirdExam';
 import FourthExam from '../../components/home/menus/exams/FourthExam';
 import FivethExam from '../../components/home/menus/exams/FivethExam';
+import Services from '../../components/home/menus/Services';
+import ServiceInformation from '../../components/home/menus/servicesComponents/ServiceInformation';
 
 export default function HomeRouter() {
 
@@ -22,6 +24,8 @@ export default function HomeRouter() {
                 <Route path='/exam/3' element={<ThirdExam />} />
                 <Route path='/exam/4' element={<FourthExam />} />
                 <Route path='/exam/5' element={<FivethExam />} />
+                <Route path='/services' element={<Services />} />
+                <Route path='/service/:service_id' element={<ServiceInformation />} />
 
             </Routes>
         </>
