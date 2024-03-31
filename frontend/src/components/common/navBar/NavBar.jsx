@@ -42,7 +42,11 @@ export default function NavBar() {
                         borderWidth: '3px'
                     }}
                 >Examenes Prueba</Button>
-                <Button variant='outlined' size='medium'
+                <Button
+                    onClick={() => {
+                        navigate('/home/services')
+                    }}
+                    variant='outlined' size='medium'
                     sx={{
                         color: 'black', borderColor: 'yellow', fontWeight: 'bold',
                         borderWidth: '3px'
