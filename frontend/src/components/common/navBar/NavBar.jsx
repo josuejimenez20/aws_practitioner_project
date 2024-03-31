@@ -52,13 +52,19 @@ export default function NavBar() {
                         borderWidth: '3px'
                     }}
                 >Aprender sobre servicios</Button>
-                <Button variant='outlined' size='medium'
+                <Button
+                    onClick={() => {
+                        navigate('/home/additional_recources')
+                    }} variant='outlined'
+                    size='medium'
                     sx={{
                         color: 'black', borderColor: 'yellow', fontWeight: 'bold',
                         borderWidth: '3px'
                     }}
+
                 >Recursos adicionales</Button>
-                <Button variant='outlined' size='medium'
+                <Button
+                    variant='outlined' size='medium'
                     sx={{
                         color: 'black', borderColor: 'yellow', fontWeight: 'bold',
                         borderWidth: '3px'
