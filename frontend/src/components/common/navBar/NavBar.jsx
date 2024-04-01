@@ -3,10 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import {
     Container, Stack, Button
 } from '@mui/material';
+import { deletLoginCookie } from '../../../helpers/login_cookies';
 
 export default function NavBar() {
 
     const navigate = useNavigate();
+
+    const outLogin = async () => {
+        const result = await deletLoginCookie('FLO_IFSKH#_R43_FJ');
+
+        if (result) {
+            navigate('/login')
+        }
+    }
 
     return (
 
@@ -64,6 +73,9 @@ export default function NavBar() {
 
                 >Recursos adicionales</Button>
                 <Button
+                    onClick={() => {
+                        outLogin();
+                    }}
                     variant='outlined' size='medium'
                     sx={{
                         color: 'black', borderColor: 'yellow', fontWeight: 'bold',

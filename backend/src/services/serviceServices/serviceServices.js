@@ -23,7 +23,6 @@ const getServiceInformationByIdService = async (serviceId) => {
 
     try {
         const result = await getServiceInformationByIdModel(serviceId);
-            console.log(result);
 
         return {
             code: 200,

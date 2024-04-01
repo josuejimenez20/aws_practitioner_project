@@ -21,8 +21,6 @@ const imageUpload = async (req, res) => {
         // Sube el archivo a Cloudinary
         const { secure_url } = await cloudinary.uploader.upload(fileImage.tempFilePath, { height: 1250, width: 1870, crop: "scale" });
 
-        console.log(secure_url);
-
         return res.status(200).json({
             message: 'Archivo subido exitosamente',
             secure_url: secure_url
