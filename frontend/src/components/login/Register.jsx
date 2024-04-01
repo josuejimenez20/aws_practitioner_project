@@ -5,6 +5,7 @@ import {
     Alert
 } from '@mui/material';
 import { registerAction } from '../../actions/login/registerAction';
+import { setLoginCookie } from '../../helpers/login_cookies';
 
 export default function Register() {
 
@@ -51,7 +52,13 @@ export default function Register() {
         try {
             const { message, status } = await registerAction(dataFormat);
             if (status === 200) {
-                navigate('/home')
+
+                const setCookie = await setLoginCookie('FLO_IFSKH#_R43_FJ', 'JD');
+
+                if (!setCookie)
+                    return setLogInError('Please try again');
+
+                navigate('/home/information')
                 return
             }
             setLogInError(message);

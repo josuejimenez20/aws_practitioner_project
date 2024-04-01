@@ -19,9 +19,7 @@ export default function ServiceInformation() {
 
             setServiceInformation(result);
 
-            console.log(result);
         } catch (error) {
-            console.log(error);
         }
     }
 

@@ -5,6 +5,7 @@ import {
     Alert
 } from '@mui/material';
 import { loginAction } from '../../actions/login/loginAction';
+import { setLoginCookie } from '../../helpers/login_cookies';
 
 export default function Login() {
 
@@ -39,7 +40,13 @@ export default function Login() {
         try {
             const { message, status } = await loginAction(dataFormat);
             if (status === 200) {
-                navigate('/home')
+
+                const setCookie = await setLoginCookie('FLO_IFSKH#_R43_FJ', 'JD');
+
+                if (!setCookie)
+                    return setLogInError('Please try again');
+
+                navigate('/home/information')
                 return
             }
             setLogInError(message);
